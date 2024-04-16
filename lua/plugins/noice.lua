@@ -10,5 +10,6 @@ return {
     })
 
     opts.presets.lsp_doc_border = true
+    opts.lsp.signature = { enabled = false }
   end,
 }

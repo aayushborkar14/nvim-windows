@@ -12,12 +12,6 @@ return {
         "g++ -g $fileName -o $fileNameWithoutExt.exe &&",
         "$dir\\$fileNameWithoutExt.exe",
       },
-      python = "python -u",
-      java = {
-        "cd $dir &&",
-        "javac $fileName &&",
-        "java $fileNameWithoutExt",
-      },
     }
     code_runner.setup(opts)
   end,
