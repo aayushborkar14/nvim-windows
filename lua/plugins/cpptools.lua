@@ -10,7 +10,6 @@ return {
   },
   opts = function()
     local dap = require("dap")
-    local dap = require("dap")
     dap.adapters.cppdbg = {
       id = "cppdbg",
       type = "executable",
