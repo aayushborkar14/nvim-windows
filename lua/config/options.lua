@@ -17,3 +17,8 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 -- Use the treesitter foldexpr for folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+-- Neovide config
+if vim.g.neovide then
+  vim.o.guifont = "MesloLGM Nerd Font:h12"
+end
