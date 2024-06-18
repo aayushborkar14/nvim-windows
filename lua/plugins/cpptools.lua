@@ -13,7 +13,7 @@ return {
     dap.adapters.cppdbg = {
       id = "cppdbg",
       type = "executable",
-      command = "C:\\Users\\aayus\\AppData\\Local\\nvim-data\\mason\\packages\\cpptools\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe",
+      command = LazyVim.get_pkg_path("cpptools", "/extension/debugAdapters/bin/OpenDebugAD7.exe"),
       options = {
         detached = false,
       },
