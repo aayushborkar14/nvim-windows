@@ -17,6 +17,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Change C/C++ indent to 4 spaces
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp", "h", "hpp" },
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+  end,
+})
+
 -- Persist folds (from AstroNvim)
 local view_group = vim.api.nvim_create_augroup("auto_view", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
