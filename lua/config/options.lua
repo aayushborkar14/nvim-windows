@@ -11,9 +11,6 @@
 -- vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
 -- vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
 
--- Use nushell as the shell
-vim.o.shell = "nu"
-
 -- Use basedpyright as the default Python LSP
 vim.g.lazyvim_python_lsp = "basedpyright"
 
