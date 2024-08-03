@@ -3,7 +3,6 @@ return {
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
-    { "<leader>fz", "<cmd>FzfLua<cr>", desc = "FzfLua" },
     { "<leader>fzf", "<cmd>FzfLua files<cr>", desc = "FzfLua files" },
   },
   config = function()
