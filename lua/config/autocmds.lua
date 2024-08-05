@@ -26,6 +26,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Add some filetypes
+vim.filetype.add({
+  extension = {
+    v = "verilog",
+  },
+})
+
 -- Persist folds (from AstroNvim)
 local view_group = vim.api.nvim_create_augroup("auto_view", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
