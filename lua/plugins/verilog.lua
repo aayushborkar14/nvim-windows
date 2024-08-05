@@ -4,7 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "verible",
-        "svls",
+        "svlangserver",
       },
     },
   },
@@ -12,19 +12,25 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        svls = {
-          cmd = { "svls" },
-          filetypes = { "verilog", "systemverilog" },
-          root_dir = function(fname)
-            return require("lspconfig.util").find_git_ancestor(fname) or vim.loop.cwd()
-          end,
-        },
         verible = {
           cmd = { "verible-verilog-ls" },
           filetypes = { "verilog", "systemverilog" },
           root_dir = function(fname)
             return require("lspconfig.util").root_pattern("verible.filelist", ".git")(fname) or vim.loop.cwd()
           end,
+        },
+        svlangserver = {
+          cmd = { "svlangserver" },
+          filetypes = { "verilog", "systemverilog" },
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern(".svlangserver", ".git")(fname) or vim.loop.cwd()
+          end,
+          settings = {
+            systemverilog = {
+              includeIndexing = { "*.{v,vh,sv,svh}", "**/*.{v,vh,sv,svh}" },
+            },
+          },
+          single_file_support = true,
         },
       },
     },
