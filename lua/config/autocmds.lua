@@ -29,9 +29,27 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Add some filetypes
 vim.filetype.add({
   extension = {
+    sage = "python",
+    s = "mips",
     v = "verilog",
   },
 })
+
+-- Ensure that .s files are properly detected as mips
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.s",
+  callback = function()
+    vim.bo.filetype = "mips"
+  end,
+})
+
+-- MIPS autoformat
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*.s", -- or whatever file extension you use for MIPS assembly
+--   callback = function()
+--     require("mips_formatter").format_mips()
+--   end,
+-- })
 
 -- Persist folds (from AstroNvim)
 local view_group = vim.api.nvim_create_augroup("auto_view", { clear = true })

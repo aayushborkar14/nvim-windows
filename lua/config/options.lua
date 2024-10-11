@@ -11,8 +11,12 @@ vim.o.shellcmdflag =
 vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
 vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
 
--- Use basedpyright as the default Python LSP
+-- Use fzf-lua
+vim.g.lazyvim_picker = "fzf"
+
+-- Use basedpyright as the default Python LSP, and the new ruff
 vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_python_ruff = "ruff"
 
 -- Use the treesitter foldexpr for folding
 vim.opt.foldmethod = "expr"

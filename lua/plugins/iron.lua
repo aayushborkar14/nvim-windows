@@ -7,6 +7,9 @@ return {
       config = {
         scratch_repl = true,
         repl_open_cmd = view.split.vertical.botright(0.5),
+        repl_definition = {
+          python = { command = "ipython", "--no-autoindent" },
+        },
       },
       keymaps = {
         send_motion = "<space>sc",
