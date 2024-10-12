@@ -11,6 +11,10 @@ vim.o.shellcmdflag =
 vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
 vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
 
+-- Pumblend and Winblend for transparency
+vim.o.pumblend = 0
+vim.o.winblend = 0
+
 -- Use fzf-lua
 vim.g.lazyvim_picker = "fzf"
 
