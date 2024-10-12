@@ -5,11 +5,11 @@ return {
     local cmp = require("cmp")
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
-      -- Insert newline with enter
-      ["<CR>"] = function(fallback)
+      -- Prevent enter to confirm completion
+      ["<CR>"] = cmp.mapping(function(fallback)
         cmp.abort()
         fallback()
-      end,
+      end, { "i", "s", "c" }),
       ["<Tab>"] = cmp.mapping(function(fallback)
         -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
         if cmp.visible() then
