@@ -1,0 +1,23 @@
+{
+  "cp-extension": {
+    "prefix": ["cpp-cp"],
+    "body": [
+      "#include <iostream>",
+      "#include <vector>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "    cin.tie(0)->sync_with_stdio(0);",
+      "    int t{};",
+      "    cin >> t;",
+      "    while (t--) {",
+      "        int n;",
+      "        cin >> n;",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Default cpp code for CP"
+  }
+}
